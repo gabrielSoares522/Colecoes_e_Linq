@@ -4,14 +4,13 @@ namespace algoritimo_ordenacao;
 class Program
 {
     static void Main(string[] args){
-        int exercicio = 3;
+        int exercicio = 5;
         int[] arr = new int[5]{45,32,76,34,84};
+        int valor = 45;
 
         switch(exercicio){
         case 0:
             int[] colecao = new int[]{78,45,83,63,55,100,23,67};
-
-            int valor = 43;
 
             ExibirArray(colecao);
             //Console.WriteLine("Aplicando o algoritimo Bubble Sort");
@@ -31,7 +30,6 @@ class Program
             break;
         
         case 2:
-            valor = 43;
             if (ExisteElemento(arr,valor)) {
                 Console.WriteLine("Encontrei o valor {0}",valor);
             } else {
@@ -40,7 +38,6 @@ class Program
             break;
         
         case 3:
-            valor = 43;
             if (TodosSaoMaiorQue(arr,valor)) {
                 Console.WriteLine("Todos os valores são maiores que {0}",valor);
             } else {
@@ -48,13 +45,21 @@ class Program
             }
             break;
         case 4:
-            valor = 43;
             int valorObtido = ObterValor(arr,valor);
             if (valorObtido>0) {
                 Console.WriteLine("Achei {0} no array",valorObtido);
             } else {
                 Console.WriteLine("{0} não encontrado no array",valorObtido);
             }
+            break;
+        case 5:
+            int indice = ObterIndice(arr,valor);
+            if (indice > -1) {
+                Console.WriteLine("O indice de {0} é {1}",valor,indice);
+            } else {
+                Console.WriteLine("O array não possui {0}",valor);
+            }
+
             break;
         }
     }
@@ -101,5 +106,8 @@ class Program
         return Array.Find(arr, elemento => elemento == valor);
     }
 
+     static int ObterIndice(int[] arr, int valor){
+        return Array.IndexOf(arr, valor);
+    }
 
 }
