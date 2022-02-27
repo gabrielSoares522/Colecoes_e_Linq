@@ -68,6 +68,10 @@ class Program
             RedimensionarArray(ref arr,10);
             Console.WriteLine("a nova capacidade do array é {0}", arr.Length);
             break;
+        case 7:
+            Console.WriteLine("Convertendo o array em tipo string");
+            string[] arrString = ConverterArrayParaString(arr);
+            break;
         }
     }
 
@@ -118,5 +122,9 @@ class Program
     }
     static void RedimensionarArray(ref int[] arr, int novoTamanho){
         Array.Resize(ref arr,novoTamanho);
+    }
+
+    static string[] ConverterArrayParaString(int[] arr){
+        return Array.ConvertAll(arr,elemento => elemento.ToString());
     }
 }
