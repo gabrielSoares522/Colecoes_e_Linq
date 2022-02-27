@@ -4,7 +4,7 @@ namespace algoritimo_ordenacao;
 class Program
 {
     static void Main(string[] args){
-        int exercicio = 5;
+        int exercicio = 6;
         int[] arr = new int[5]{45,32,76,34,84};
         int valor = 45;
 
@@ -61,6 +61,13 @@ class Program
             }
 
             break;
+            
+        case 6:
+            Console.WriteLine("a capacidade atual do array é {0}", arr.Length);
+            Console.WriteLine("Executando...");
+            RedimensionarArray(ref arr,10);
+            Console.WriteLine("a nova capacidade do array é {0}", arr.Length);
+            break;
         }
     }
 
@@ -109,5 +116,7 @@ class Program
      static int ObterIndice(int[] arr, int valor){
         return Array.IndexOf(arr, valor);
     }
-
+    static void RedimensionarArray(ref int[] arr, int novoTamanho){
+        Array.Resize(ref arr,novoTamanho);
+    }
 }
